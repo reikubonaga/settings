@@ -30,7 +30,7 @@ alias gc='git checkout'
 #gitの保管
 autoload -U compinit
 compinit
-source ~/git-completion.bash
+source ~/.zsh.d/git-completion.bash
 
 autoload -U colors
 colors

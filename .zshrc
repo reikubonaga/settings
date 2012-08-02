@@ -4,7 +4,6 @@ alias ls='ls -G -v'
 alias la="ls -a"
 alias e="emacs"
 alias lsg='ls | grep '
-eval "$(rbenv init -)"
 alias behat="~/bin/behat"
 export PATH=~/bin:/opt/local/bin:/opt/local/sbin/:$PATH
 export LANG=ja_JP.UTF-8
@@ -45,3 +44,10 @@ setopt no_beep
 if [ -e .alias_list ] ; then 
   source .alias_list
 fi
+
+function o() { 
+  open "http://$1.com"
+}
+function s() { 
+  open "http://google.jp#hl=ja&gs_nf=1&cp=4&gs_id=11&xhr=t&q=$1"
+}

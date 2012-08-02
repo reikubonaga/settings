@@ -10,3 +10,4 @@
 !.zshrc
 !.zshenv
 !git-completion.bash
+.emacs.d/auto-save-list/

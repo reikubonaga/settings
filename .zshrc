@@ -1,6 +1,7 @@
 export LSCOLORS=gxfxcxdxbxegedabagacad
 export PATH=$PATH:~/pear/bin
 alias ls='ls -G -v'
+alias sl='ls'
 alias la="ls -a"
 alias e="emacs"
 alias lsg='ls | grep '
@@ -30,7 +31,7 @@ alias gc='git checkout'
 #gitの保管
 autoload -U compinit
 compinit
-source ~/git-completion.bash
+source ~/.zsh.d/git-completion.bash
 
 autoload -U colors
 colors

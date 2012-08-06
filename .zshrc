@@ -1,6 +1,7 @@
 export LSCOLORS=gxfxcxdxbxegedabagacad
 export PATH=$PATH:~/pear/bin
 alias ls='ls -G -v'
+alias sl='ls'
 alias la="ls -a"
 alias e="emacs"
 alias lsg='ls | grep '

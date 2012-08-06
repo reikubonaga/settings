@@ -45,9 +45,17 @@ if [ -e .alias_list ] ; then
   source .alias_list
 fi
 
+if [ -e .zshrc_other ] ; then 
+  source .zshrc_other
+fi
+
 function o() { 
   open "http://$1.com"
 }
 function s() { 
   open "http://google.jp#hl=ja&gs_nf=1&cp=4&gs_id=11&xhr=t&q=$1"
 }
+
+alias a="./a.out"
+
+eval "$(rbenv init -)"

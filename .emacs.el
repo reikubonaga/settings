@@ -8,6 +8,9 @@
 ;;delete
 (global-set-key "\C-h" 'delete-backward-char)
 
+;;grep-find
+(global-set-key "\C-t" 'grep-find)
+
 ;;行数ジャンプ
 (global-set-key "\C-x\C-g" 'goto-line)
 

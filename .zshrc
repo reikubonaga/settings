@@ -6,7 +6,7 @@ alias la="ls -a"
 alias e="emacs"
 alias lsg='ls | grep '
 alias behat="~/bin/behat"
-export PATH=~/bin:/opt/local/bin:/opt/local/sbin/:$PATH
+export PATH=/usr/local/bin:~/bin:/opt/local/bin:/opt/local/sbin/:$PATH
 export LANG=ja_JP.UTF-8
 
 # コマンド履歴
@@ -27,6 +27,8 @@ alias gl="git log"
 alias gs='git status'
 alias gb='git branch'
 alias gc='git checkout'
+alias gm='git commit -m '
+alias gp='git push origin '
 
 #gitの保管
 autoload -U compinit

@@ -1,15 +1,11 @@
 ;; ロードパス
 (setq load-path (cons "~/.emacs.d/site-lisp" load-path))
 
-;; auto-complete
-(require 'auto-complete)
-(global-auto-complete-mode t)
-
 ;;delete
 (global-set-key "\C-h" 'delete-backward-char)
 
 ;;grep-find
-(global-set-key "\C-t" 'grep-find)
+(global-set-key "\C-xg" 'grep-find)
 
 ;;行数ジャンプ
 (global-set-key "\C-x\C-g" 'goto-line)
@@ -69,17 +65,17 @@
 (global-font-lock-mode t)
 
 ;; python-mode
-(setq auto-mode-alist
-      (cons '("\\.py$" . python-mode) auto-mode-alist))
-(autoload 'python-mode "python-mode" "Python editing mode." t)
+;;(setq auto-mode-alist
+;;      (cons '("\\.py$" . python-mode) auto-mode-alist))
+;;(autoload 'python-mode "python-mode" "Python editing mode." t)
 
 ;;python-mode
-(add-hook 'python-mode-hook
-      '(lambda()
-         (setq indent-tabs-mode nil)
+;;(add-hook 'python-mode-hook
+;;      '(lambda()
+;;         (setq indent-tabs-mode nil)
          ;;(setq indent-level 2)
          ;;(setq python-indent 2)
-         (setq tab-width 2)))
+;;         (setq tab-width 2)))
 
 ;;php-mode
 (load-library "php-mode")
@@ -114,3 +110,20 @@
     (add-to-list 'auto-mode-alist '("\\.styl$" . sws-mode))
     (add-to-list 'auto-mode-alist '("\\.jade$" . jade-mode))
     (setq auto-complete-mode)
+
+;; auto-complete
+(require 'auto-complete)
+(global-auto-complete-mode t)
+
+;;Delete excess white space
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
+(setq-default require-final-newline t)
+
+;;find grep
+(setq grep-find-command "find . -type f ! -name '*.png' ! -path '.git*' ! -path '.bundle*' -print0 | xargs -0 grep -n ")
+
+(add-to-list 'load-path "~/.emacs.d/vendor/textmate.el")
+(require 'textmate)
+(add-to-list 'load-path "~/.emacs.d/vendor/")
+(require 'peepopen)
+(textmate-mode)

@@ -53,9 +53,15 @@ if [ -e .zshrc_other ] ; then
 fi
 
 function o() { 
+  if [ "$1" -eq "" ] ; then
+    return;
+  fi
   open "http://$1.com"
 }
 function s() { 
+  if [ "$1" -eq "" ] ; then
+    return;
+  fi
   open "http://google.jp#hl=ja&gs_nf=1&cp=4&gs_id=11&xhr=t&q=$1"
 }
 

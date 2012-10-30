@@ -27,7 +27,6 @@ alias gl="git log"
 alias gs='git status'
 alias gb='git branch'
 alias gc='git checkout'
-alias gm='git commit -m '
 
 #gitの保管
 autoload -U compinit
@@ -74,6 +73,18 @@ function gp() {
     return;
   fi
   git push origin "$1"
+}
+
+function gm(){
+  if [ -e .confirm_before_git_commit ] ; then
+    cat .confirm_before_git_commit
+  fi
+  print "y or n"
+  read YES
+  if [ "$YES" = "n" ] ; then
+    return;
+  fi
+  git commit -m "$1"
 }
 
 alias a="./a.out"

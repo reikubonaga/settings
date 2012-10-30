@@ -28,7 +28,6 @@ alias gs='git status'
 alias gb='git branch'
 alias gc='git checkout'
 alias gm='git commit -m '
-alias gp='git push origin '
 
 #gitの保管
 autoload -U compinit
@@ -44,25 +43,37 @@ zstyle ':completion:*:default' menu select=1
 # ベルを鳴らさない。
 setopt no_beep
 
-if [ -e .alias_list ] ; then 
+if [ -e .alias_list ] ; then
   source .alias_list
 fi
 
-if [ -e .zshrc_other ] ; then 
+if [ -e .zshrc_other ] ; then
   source .zshrc_other
 fi
 
-function o() { 
+function o() {
   if [ "$1" -eq "" ] ; then
     return;
   fi
   open "http://$1.com"
 }
-function s() { 
+function s() {
   if [ "$1" -eq "" ] ; then
     return;
   fi
   open "http://google.jp#hl=ja&gs_nf=1&cp=4&gs_id=11&xhr=t&q=$1"
+}
+
+function gp() {
+  if [ -e .confirm_before_git_push ] ; then
+    cat .confirm_before_git_push
+  fi
+  print "y or n"
+  read YES
+  if [ "$YES" = "n" ] ; then
+    return;
+  fi
+  git push origin "$1"
 }
 
 alias a="./a.out"

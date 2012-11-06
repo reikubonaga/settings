@@ -63,21 +63,11 @@ function s() {
   open "http://google.jp#hl=ja&gs_nf=1&cp=4&gs_id=11&xhr=t&q=$1"
 }
 
-function gp() {
-  if [ -e .confirm_before_git_push ] ; then
-    cat .confirm_before_git_push
-  fi
-  print "y or n"
-  read YES
-  if [ "$YES" = "n" ] ; then
-    return;
-  fi
-  git push origin "$1"
-}
-
 function gm(){
-  if [ -e .confirm_before_git_commit ] ; then
-    cat .confirm_before_git_commit
+  if [ -e ~/.confirm_before_git_commit ] ; then
+    cat ~/.confirm_before_git_commit
+    read NEXT
+    git diff --cached
   fi
   print "y or n"
   read YES

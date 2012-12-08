@@ -7,6 +7,12 @@
 ;;grep-find
 (global-set-key "\C-xg" 'grep-find)
 
+;;各行の先頭に文字列を挿入する
+(global-set-key "\C-xrd" 'delete-whitespace-rectangle)
+
+;;各行をインデント
+(global-set-key "\C-xri" 'indent-region)
+
 ;;行数ジャンプ
 (global-set-key "\C-x\C-g" 'goto-line)
 
@@ -34,14 +40,6 @@
 
  ;; 対応する括弧を光らせる（グラフィック環境のみ作用）
 (show-paren-mode t)
-
-;;Color
-(if window-system (progn
-   (set-background-color "Black")
-   (set-foreground-color "LightGray")
-   (set-cursor-color "Gray")
-   (set-frame-parameter nil 'alpha 80)
-   ))
 
 ;;bookmarkを保存
 (setq bookmark-save-flag 1)
@@ -154,3 +152,8 @@
   (setq web-mode-java-offset   2)
   (setq web-mode-asp-offset    2))
 (add-hook 'web-mode-hook 'web-mode-hook)
+
+;;linum-mode off (高速化)
+(setq linum-delay t)
+(defadvice linum-schedule (around my-linum-schedule () activate)
+  (run-with-idle-timer 0.2 nil #'linum-update-current))

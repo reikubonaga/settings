@@ -8,7 +8,6 @@
 !.gitmodules
 !README.md
 !.zshrc
-!.zshenv
 !git-completion.bash
 .emacs.d/auto-save-list/
 !.zsh.d

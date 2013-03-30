@@ -2,6 +2,8 @@ export LSCOLORS=gxfxcxdxbxegedabagacad
 export PATH=$PATH:~/pear/bin
 alias ls='ls -G -v'
 alias sl='ls'
+alias pdw='pwd'
+alias gti='git'
 alias la="ls -a"
 alias e="emacs"
 alias lsg='ls | grep '
@@ -27,6 +29,7 @@ alias gl="git log"
 alias gs='git status'
 alias gb='git branch'
 alias gc='git checkout'
+alias git_branch_delete_old="git branch --merged master | grep -v 'master$' | xargs git branch -d"
 
 #gitの保管
 autoload -U compinit
@@ -80,3 +83,5 @@ function gm(){
 alias a="./a.out"
 
 eval "$(rbenv init -)"
+
+alias datafart='curl --data-binary @- datafart.com'

@@ -32,7 +32,7 @@
 
 ;; タブキー
 (setq-default tab-width 2 indent-tabs-mode nil)
-(setq indent-line-function 'indent-relative-maybe)
+;;(setq indent-line-function 'indent-relative-maybe)
 
 ;; シフト + 矢印で範囲選択
 (setq pc-select-selection-keys-only t)

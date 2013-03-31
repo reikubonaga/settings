@@ -35,8 +35,8 @@
 ;;(setq indent-line-function 'indent-relative-maybe)
 
 ;; シフト + 矢印で範囲選択
-(setq pc-select-selection-keys-only t)
-(pc-selection-mode 1)
+;;(setq pc-select-selection-keys-only t)
+;;(pc-selection-mode 1)
 
  ;; 対応する括弧を光らせる（グラフィック環境のみ作用）
 (show-paren-mode t)
@@ -157,3 +157,7 @@
 (setq linum-delay t)
 (defadvice linum-schedule (around my-linum-schedule () activate)
   (run-with-idle-timer 0.2 nil #'linum-update-current))
+
+(autoload 'markdown-mode "markdown-mode" "Major mode for editing Markdown files" t)
+(setq auto-mode-alist  (cons '("\\.md$" . markdown-mode) auto-mode-alist))
+(setq auto-mode-alist  (cons '("\\.markdown$" . markdown-mode) auto-mode-alist))

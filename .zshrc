@@ -82,6 +82,4 @@ function gm(){
 
 alias a="./a.out"
 
-eval "$(rbenv init -)"
-
 alias datafart='curl --data-binary @- datafart.com'

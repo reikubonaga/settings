@@ -30,6 +30,8 @@ alias gs='git status'
 alias gb='git branch'
 alias gc='git checkout'
 alias git_branch_delete_old="git branch --merged master | grep -v 'master$' | xargs git branch -d"
+alias gdc='git diff --cached'
+alias gd='git diff'
 
 #gitの保管
 autoload -U compinit

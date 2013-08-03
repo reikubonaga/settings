@@ -1,3 +1,5 @@
+(defun mac? () (string-match "apple-darwin" system-configuration))
+
 ;; ロードパス
 (setq load-path (cons "~/.emacs.d/site-lisp" load-path))
 
@@ -26,7 +28,7 @@
 (setq backup-inhibited t)
 
 ;; Macのキーバインドを使う。optionをメタキーにする。
-(when (eq window-system 'mac)
+(when (mac?)
   (mac-key-mode 1)
   (setq mac-option-modifier 'meta))
 
@@ -48,7 +50,7 @@
 (global-set-key "\C-^" 'other-window)
 
 ;;copy
-(when (eq window-system 'mac)
+(when (mac?)
  (defun copy-from-osx ()
   (shell-command-to-string "pbpaste"))
 

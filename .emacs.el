@@ -28,9 +28,9 @@
 (setq backup-inhibited t)
 
 ;; Macのキーバインドを使う。optionをメタキーにする。
-(when (mac?)
-  (mac-key-mode 1)
-  (setq mac-option-modifier 'meta))
+;;(when (mac?)
+;;  (mac-key-mode 1)
+;;  (setq mac-option-modifier 'meta))
 
 ;; タブキー
 (setq-default tab-width 2 indent-tabs-mode nil)

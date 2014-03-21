@@ -164,3 +164,8 @@
 (autoload 'markdown-mode "markdown-mode" "Major mode for editing Markdown files" t)
 (setq auto-mode-alist  (cons '("\\.md$" . markdown-mode) auto-mode-alist))
 (setq auto-mode-alist  (cons '("\\.markdown$" . markdown-mode) auto-mode-alist))
+
+;; 1文字削除して次の行に
+(global-set-key "\C-x\C-n" (kbd "C-d C-n"))
+;; 2文字削除して次の行に
+(global-set-key "\C-x\C-n" (kbd "C-d C-d C-n"))

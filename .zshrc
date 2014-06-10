@@ -24,6 +24,9 @@ setopt auto_pushd
 # タブキー連打で補完候補を順に表示
 setopt auto_menu
 
+# http://shirusu-ni-tarazu.hatenablog.jp/entry/2013/01/18/034233
+setopt nonomatch
+
 #git alias
 alias gl="git log"
 alias gs='git status'

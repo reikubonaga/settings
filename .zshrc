@@ -39,7 +39,7 @@ alias gd='git diff'
 #gitの保管
 autoload -U compinit
 compinit
-zstyle ':completion:*:*:git:*' script ~/.git-completion.sh
+zstyle ':completion:*:*:git:*' script ~/.zsh.d/git-completion.bash
 
 autoload -U colors
 colors
